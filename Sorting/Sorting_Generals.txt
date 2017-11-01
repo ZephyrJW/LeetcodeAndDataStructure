@@ -1,0 +1,53 @@
+Sorting algorithms can do no better than O(nlgn)
+
+Typical Sorting: 
+1. Quick Sort
+2. Merge Sort
+3. Insertion Sort
+4. Bucket Sort
+5. Radix Sort
+6. Counting Sort
+
+/********************************************************/
+1. Quick Sort -- if done partially, could be quick select
+	In place
+	Pivot value randomly chosen, first or last number, ideally should be median number 
+
+2. Merge Sort
+	Recursively merge the array by dividing it into left and right halves
+	Requires extra space for recursion calls
+
+3. Insertion Sort
+	In place straightforward n square algorithm
+
+4. Bucket Sort
+	
+
+5. Radix Sort
+	Sort the numbers from the least significant digit upto most significant digit
+	Has 10 lists denoting 0,1,2 .. ,9 and append number to the end by the digit we are comparing 
+	See LC #164 Maximum_Gap 
+
+6. Counting Sort, http://www.geeksforgeeks.org/counting-sort/
+	Based on keys between a specific range.
+	Example, also LC #164: 
+	For simplicity, consider the data in the range 0 to 9 {
+	Input data: 1, 4, 1, 2, 7, 5, 2
+	  1) Take a count array to store the count of each unique object.
+	  Index:     0  1  2  3  4  5  6  7  8  9
+	  Count:     0  2  2  0   1  1  0  1  0  0
+
+	  2) Modify the count array such that each element at each index 
+	  stores the sum of previous counts. 
+	  Index:     0  1  2  3  4  5  6  7  8  9
+	  Count:     0  2  4  4  5  6  6  7  7  7
+
+	The modified count array indicates the position of each object in 
+	the output sequence.
+	 
+	  3) Output each object from the input sequence followed by 
+	  decreasing its count by 1.
+	  Process the input data: 1, 4, 1, 2, 7, 5, 2. Position of 1 is 2.
+	  Put data 1 at index 2 in output. Decrease count by 1 to place 
+	  next data 1 at an index 1 smaller than this index.
+	}
