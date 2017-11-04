@@ -1,0 +1,8 @@
+1. How to compute sqrt(x) <-- Newton's Method
+Compute n^2 = x, so it's just the point on the horizontal axis, say that's point p. Value to the left of p should be oppsite to values to it's right. By drawing tangent of some candidate point, we can gradually approaching the intersection point.
+Formula: res = (res+x/res)/2;  See LC #69
+
+
+2. How to check integer overflows?
+Use a temp to update num first, and then check if we can go back from temp to num by reversing computation.
+See LC #7
