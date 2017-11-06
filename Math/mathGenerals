@@ -6,3 +6,7 @@ Formula: res = (res+x/res)/2;  See LC #69
 2. How to check integer overflows?
 Use a temp to update num first, and then check if we can go back from temp to num by reversing computation.
 See LC #7
+
+
+3. #204Count primes, #264Ugly Number II..
+Using cache to avoid unneccessary computation.

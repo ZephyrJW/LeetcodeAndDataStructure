@@ -116,6 +116,51 @@ public int trailingZeroes(int n) {
 }
 
 
+/*204.Count Primes
+ Count the number of prime numbers less than a non-negative number, n.
+ */
+public int countPrimes(int n) {
+    int count = 0;
+    boolean[] mark = new boolean[n];
+
+    for(int i=2; i< n; i++) {
+        if(!mark[i]){
+            count++;
+            for(int j=2; i*j< n; j++) mark[i*j] = true;
+        }
+    }
+    return count;
+}
+
+/*264. Ugly Number II
+ Write a program to find the n-th ugly number.
+ Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.
+ */
+public int nthUglyNumber(int n) {
+    int[] ugly = new int[n];
+    ugly[0] = 1;
+    int p2=0, p3=0, p5=0;
+    for(int i=1; i< n; i++) {
+        ugly[i] = Math.min(Math.min(ugly[p2]*2, ugly[p3]*3),ugly[p5]*5);
+
+        if(ugly[i]==ugly[p2]*2) p2++;
+        if(ugly[i]==ugly[p3]*3) p3++;
+        if(ugly[i]==ugly[p5]*5) p5++;
+    }
+    return ugly[n-1];
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
