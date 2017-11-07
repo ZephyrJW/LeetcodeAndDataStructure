@@ -34,3 +34,17 @@ public String shortestPalindrome(String s) {
 
     return rev.substring(0,n-kmp[s.length()-1])+s.substring(0,n);
 }
+
+
+// naive solution(c++):
+string shortestPalindrome(string s) {
+    int n=s.size();
+    string rev(s);
+    reverse(rev.begin(), rev.end());
+    int j=0;
+    for(int i=0; i< n; i++) {
+        // c++ reload '==' for string object, which is lhs.compare(rhs)==0 
+        if(s.substr(0, n-i)==rev.substr(i)) return rev.substr(0,i)+s;
+    }
+    return "";
+}
