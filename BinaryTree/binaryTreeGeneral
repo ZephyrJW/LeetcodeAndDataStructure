@@ -1,0 +1,17 @@
+Each node has at most two child nodes.
+
+Special binary trees:
+1. Complete Binary Tree
+Each level must be filled except for the last level, which all nodes are as far left as possible.
+
+2. Binary Search Tree (BST)
+For each node, its value is larger than all its left descendents and is smaller than all its right descendents.
+
+3. Binary Heap (A complete tree)
+Is either Min Heap or Max Heap. In a Min Binary Heap, the key at root must be minimum among all keys present in Binary Heap. The same property must be recursively true for all nodes in Binary Tree.
+How to represent a Binary Heap?
+	A binary heap is typically represented as array.
+	- The root element will be at arr[0]
+	- parent node: arr[(i-1)/2]
+	- left child node: arr[2*i+1]
+	- right child node: arr[2*i+2]
